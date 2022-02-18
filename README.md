@@ -22,5 +22,7 @@ REACT_APP_UNSPLASH_API_KEY=your-unslapsh-api-key
 
 # start the app
 To start the app open a terminal, go to the cloned directory/unsplash and type
+
 npm install > hit enter and let install
+
 npm start > hit enter and open http://localhost:3000
