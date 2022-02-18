@@ -23,5 +23,3 @@ npm start
 # where
 You should find the app in your browser at 
 http://localhost:3000
-
-ctrl of cmd click the url to go there
