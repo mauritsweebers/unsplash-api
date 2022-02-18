@@ -1,24 +1,25 @@
 import React, { useState } from 'react'
 
+// styling
 const searchBar = {
     display: "flex",
     padding: "2rem"
 }
 
 export default function Search({click}) {
+    // api parameters
     const [query, setQuery] = useState('')
     const [orientation, setOrientation] = useState('')
     const [orderby, setOrderBy] = useState('latest')
     const [perpage, setPerpage] = useState('10')
 
+    // params object
     const params = {
         query: query,
         orientation: orientation,
         order_by: orderby,
         per_page: perpage
     }
-
-    console.log(orientation)
 
     return (
         <div style={searchBar}>

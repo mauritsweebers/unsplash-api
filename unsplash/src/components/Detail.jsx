@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 
+// styling
 const layover = {
     width: "100vw",
     height: "100vh",
@@ -14,22 +15,18 @@ const layover = {
     backgroundColor: "rgba(0, 0, 0, .8)"
 }
 
-const imgDetail = {
-}
-
 export default function Detail( {url, onClick} ) {
     const [urlimg, setUrlimg] = useState('')
     const imgRef = useRef();
 
     useLayoutEffect( () => {
         setUrlimg(url)
-        //imgRef.current.src = url
-    }, [setUrlimg])
+    }, [url])
     
     return (
         <div style={layover} onClick={() => onClick()}>
             {urlimg &&
-                <img style={imgDetail} ref={ imgRef } src={ urlimg } alt="some name"/>
+                <img ref={ imgRef } src={ urlimg } alt="some name"/>
             }
         </div>
     )

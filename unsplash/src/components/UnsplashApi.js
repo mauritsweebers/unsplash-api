@@ -1,8 +1,11 @@
+// get api key out of .env file
 const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
 const API_URL = "https://api.unsplash.com/"
 
-const UnsplashApi = async(call) => {
+const UnsplashApi = (call) => {
     /* 
+
+    OPTIONAL PARAMETERS TO USE
 
     GET /photos
         setup api parameters
@@ -24,6 +27,7 @@ const UnsplashApi = async(call) => {
 
     let get_url = (call.query === undefined || call.query === '') ? "photos?" : "search/photos?"
 
+    // Serialize Object
     const serialize = (obj) => {
         let str = [];
         for (let p in obj)
@@ -33,8 +37,6 @@ const UnsplashApi = async(call) => {
         return str.join("&");
     }
     get_url += serialize(call)
-
-    console.log(get_url)
 
     const fetchData = fetch(API_URL+get_url, {
         method: "GET",
@@ -46,6 +48,7 @@ const UnsplashApi = async(call) => {
         }
     })
     
+    // returns a promise!!
     return fetchData;
 }
 
